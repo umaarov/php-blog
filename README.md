@@ -1,4 +1,3 @@
-## Blog App with PHP and MySQL
 ## Setup and Installation
 ### 1. Clone the Repository
 ### 2. Go to phpMyAdmin and create a MySQL database
