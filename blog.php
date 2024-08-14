@@ -1,4 +1,6 @@
-<?php require 'includes/header.php' ?>
+<?php
+$title = "Blog";
+require 'includes/header.php' ?>
 
 
 <section class="py-5 text-center container">
