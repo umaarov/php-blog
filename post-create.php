@@ -1,9 +1,23 @@
 <?php
 $title = "Blog";
 require 'includes/header.php';
+require 'database.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // var_dump($_POST);
+    $title = $_POST['title'];
+    $body = $_POST['body'];
+
+    $statement = $pdo->prepare("INSERT INTO posts (title, body) VALUES (:title, :body)");
+    $statement->execute([
+        'title' => $title,
+        'body' => $body
+    ]);
+
+    $_SESSION['post-created'] = "Post Created Successfully";
+    header("Location: blog.php");
+
+    // echo "Saved successfully";
 }
 
 ?>

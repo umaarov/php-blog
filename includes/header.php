@@ -1,5 +1,8 @@
 <?php
 // $title = "PHP Blog"
+
+session_start()
+
 ?>
 
 <!DOCTYPE html>
