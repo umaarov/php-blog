@@ -10,9 +10,10 @@ require 'includes/header.php' ?>
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-            </svg>
+            <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="https://www.sammobile.com/wp-content/uploads/2022/02/Galaxy-S22-Ultra-12.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+                </svg> -->
+            <img class="bd-placeholder-img" width="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" src="https://www.sammobile.com/wp-content/uploads/2022/02/Galaxy-S22-Ultra-12.jpg" alt="">
             <div class="container">
                 <div class="carousel-caption text-start">
                     <h1>Example headline.</h1>
@@ -22,9 +23,10 @@ require 'includes/header.php' ?>
             </div>
         </div>
         <div class="carousel-item">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-            </svg>
+            </svg> -->
+            <img class="bd-placeholder-img" width="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" src="https://www.techadvisor.com/wp-content/uploads/2024/06/iPhone-15_review_10-11.jpg?quality=50&strip=all" alt="">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Another example headline.</h1>
@@ -34,9 +36,10 @@ require 'includes/header.php' ?>
             </div>
         </div>
         <div class="carousel-item">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-            </svg>
+            </svg> -->
+            <img class="bd-placeholder-img" width="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" style="background-size: cover;" src="https://m-cdn.phonearena.com/images/review/6085-wide-two_1200/Xiaomi-Redmi-Note-13-Pro-5G-Review.jpg" alt="">
             <div class="container">
                 <div class="carousel-caption text-end">
                     <h1>One more for good measure.</h1>
