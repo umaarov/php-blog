@@ -8,6 +8,20 @@ $statement->execute();
 
 $posts = $statement->fetchAll();
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['DEL'])) {
+
+    // var_dump($_POST);
+
+    $post_id = $_POST['post_id'];
+
+    $statement = $pdo->prepare("DELETE FROM posts WHERE id = ?");
+    $statement->execute([$post_id]);
+
+    $_SESSION['post-deleted'] = 'Post Successfully Deleted';
+
+    header("Location: blog.php");
+    exit;
+}
 // var_dump($posts[0]);
 // if (isset($_SESSION["post-created"])) {
 // $message = $_SESSION["post-created"];
@@ -39,6 +53,14 @@ $posts = $statement->fetchAll();
                 <?php unset($_SESSION["post-created"]) ?>
             </div>
         <?php endif; ?>
+
+        <?php if (isset($_SESSION["post-deleted"])): ?>
+            <div class="alert alert-danger" role="alert">
+                <?= $_SESSION["post-deleted"] ?>
+                <?php unset($_SESSION["post-deleted"]) ?>
+            </div>
+        <?php endif; ?>
+
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <?php foreach ($posts as $post): ?>
                 <div class="col">
@@ -48,16 +70,21 @@ $posts = $statement->fetchAll();
                             <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
                         </svg>
                         <div class="card-body">
-                            
-                            <a href="post.php?id=<?=$post['id'] ?>">
+
+                            <a href="post.php?id=<?= $post['id'] ?>">
                                 <h5 class="card-text"><?= $post["title"]; ?></h5>
                             </a>
 
                             <p class="card-text"><?= $post["body"]; ?></p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                                     <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+
+                                    <form method="POST">
+                                        <input type="hidden" name="post_id" value="<?= $post['id'] ?>">
+                                        <input type="hidden" name="DEL">
+                                        <button type="submit" class="btn btn-sm btn-outline-secondary">Delete</button>
+                                    </form>
                                 </div>
                                 <small class="text-body-secondary"><?= $post["created_at"]; ?></small>
                             </div>
