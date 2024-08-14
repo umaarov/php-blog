@@ -48,7 +48,11 @@ $posts = $statement->fetchAll();
                             <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
                         </svg>
                         <div class="card-body">
-                            <h5 class="card-text"><?= $post["title"]; ?></h5>
+                            
+                            <a href="post.php?id=<?=$post['id'] ?>">
+                                <h5 class="card-text"><?= $post["title"]; ?></h5>
+                            </a>
+
                             <p class="card-text"><?= $post["body"]; ?></p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
