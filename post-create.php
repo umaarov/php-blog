@@ -1,7 +1,12 @@
 <?php
 $title = "Blog";
-require 'includes/header.php' ?>
+require 'includes/header.php';
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // var_dump($_POST);
+}
+
+?>
 <div class="container py-4">
     <header class="pb-3 mb-4 border-bottom">
         <a href="#" class="d-flex align-items-center text-body-emphasis text-decoration-none">
@@ -14,15 +19,15 @@ require 'includes/header.php' ?>
     </header>
 
     <div class="p-5 mb-4 bg-body-tertiary rounded-3">
-        <form class="container-fluid py-5">
+        <form method="POST" action="" class="container-fluid py-5">
             <h1 class="display-5 fw-bold">Create Post</h1>
             <div class="mb-3">
                 <label class="form-label">Title</label>
-                <input type="text" class="form-control">
+                <input name="title" type="text" class="form-control">
             </div>
             <div class="mb-3">
                 <label class="form-label">Description</label>
-                <textarea class="form-control" rows="3"></textarea>
+                <textarea name="body" class="form-control" rows="3"></textarea>
             </div>
             <button class="btn btn-primary" type="submit">Save</button>
         </form>
